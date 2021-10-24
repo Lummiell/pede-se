@@ -1,0 +1,12 @@
+{
+  "name": "pede-se",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "license": "MIT"
+}
