@@ -4,3 +4,4 @@ dist-ssr
 yarn-error.log
 .DS_Store
 *.local
+.env

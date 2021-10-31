@@ -1,3 +1,3 @@
-### Pede-se
+# Pede-se
 
-Um aplicativo de fazer pedidos.
+Um aplicativo para fazer pedidos.
