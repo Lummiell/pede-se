@@ -1,24 +1,21 @@
-import "./setup";
 import "reflect-metadata";
+import "./setupenv";
+import app from "./app";
 import { createConnection } from "typeorm";
 import config from "./Database/ormconfig";
-import app from "./app";
-import { Customer } from "./Database/Entities/Customer";
+const appPort = 3333;
 const main = async () => {
-  await createConnection(config);
-  const customer = Customer.create({
-    customerID:"123123abcabc",
-    address: "Rua A",
-    city: "Cidade A",
-    name: "Alice",
-    number: "12A",
-    phone: "33333-3333",
-    state: "SP",
-    zipCode: "33333-333",
-  });
-  await customer.save()
-  app.listen(3333, () => {
-    console.log("Listening");
+  console.log("Connecting to DB...");
+  try {
+    await createConnection(config);
+  } catch (error) {
+    console.log("Couldn't connect to DB. Error:");
+    console.error(error);
+    return;
+  }
+  console.log("Connected.");
+  app.listen(appPort, () => {
+    console.log(`Listening on port ${appPort}.`);
   });
 };
 main();

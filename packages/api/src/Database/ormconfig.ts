@@ -7,12 +7,12 @@ const config: ConnectionOptions = {
   password: process.env.DB_password,
   database: process.env.DB_database,
   logging: false,
-  synchronize:true,
-  entities: ["src/Database/Entities/**/*.ts"],
-  migrations: ["src/Database/Migrations/**/*.ts"],
+  synchronize: true,
+  entities: [__dirname + "/Entities/**/*{.js,.ts}"],
+  migrations: [__dirname + "/Migrations/**/*.ts"],
   cli: {
-    entitiesDir: "src/Database/Entities",
-    migrationsDir: "src/Database/Migrations",
+    entitiesDir: __dirname + "/Entities",
+    migrationsDir: __dirname + "/Migrations",
   },
 };
 export default config;

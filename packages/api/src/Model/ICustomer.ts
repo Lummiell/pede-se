@@ -1,5 +1,4 @@
 export interface ICustomer {
-customerID:string,
   name: string;
   cpf?: string;
   state: string;
