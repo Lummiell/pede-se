@@ -8,7 +8,7 @@ Self-hosted app for making orders
 
 **Pede-se** (Portuguese for "Order" as in "A sandwich is ordered") is (read as: will be), as written above, an app for making orders.
 
-The objective is the creation of a service that any estabilishments may implement in their own network or server of choice, which their cutomers may use with one single app.
+The objective is the creation of a service that any establishments may implement in their own network or server of choice, which their customers may use with one single app.
 
 ## Project Structure
 
@@ -71,7 +71,7 @@ Run the `dev` script:
 yarn dev
 ```
 
-The Web app (which, at the moment, is just a "Hello World!" app) will be cmpiled and hosted for development on the localhost at port 3000.
+The Web app (which, at the moment, is just a "Hello World!" app) will be compiled and hosted for development on the localhost at port 3000.
 
 ### Mobile
 
