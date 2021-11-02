@@ -2,7 +2,9 @@
 
 Self-hosted app for making orders
 
-## Descrição
+(Português: [Leia-me](/README.pt-br.md))
+
+## Description
 
 **Pede-se** (Portuguese for "Order" as in "A sandwich is ordered") is (read as: will be), as written above, an app for making orders.
 
