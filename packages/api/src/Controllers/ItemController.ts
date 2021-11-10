@@ -1,7 +1,7 @@
-import { Request, Response } from "express";
-import { Item } from "../Database/Entities/Item";
-import { ItemGroupService } from "../Service/ItemGroupService";
-import { ItemService } from "../Service/ItemService";
+import { Request, Response } from 'express';
+import { Item } from '../Database/Entities/Item';
+import { ItemGroupService } from '../Service/ItemGroupService';
+import { ItemService } from '../Service/ItemService';
 const ItemController = {
   getAll: async (req: Request, res: Response) => {
     const items = await ItemService.find();
@@ -12,7 +12,7 @@ const ItemController = {
     if (item) {
       return res.json(item);
     } else {
-      return res.status(404).json({ error: "ItemNotFound" });
+      return res.status(404).json({ error: 'ItemNotFound' });
     }
   },
   post: async (req: Request, res: Response) => {
@@ -25,11 +25,11 @@ const ItemController = {
       if (groupObj) {
         item.group = groupObj;
       } else {
-        return res.status(404).json({ error: "ItemGroupNotFound" });
+        return res.status(404).json({ error: 'ItemGroupNotFound' });
       }
     }
     const itemInserted = await ItemService.create(item);
     return res.json({ ...itemInserted });
-  },
+  }
 };
 export { ItemController };

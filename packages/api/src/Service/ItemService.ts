@@ -1,10 +1,10 @@
-import { getCustomRepository, getRepository, Repository } from "typeorm";
-import { Item } from "../Database/Entities/Item";
+import { getRepository } from 'typeorm';
+import { Item } from '../Database/Entities/Item';
 
 const ItemService = {
   find: async () => {
     const itemRepository = getRepository(Item);
-    const item = await itemRepository.find({ relations: ["group"] });
+    const item = await itemRepository.find({ relations: ['group'] });
     return item;
   },
   findOne: async (id: string) => {
@@ -24,8 +24,8 @@ const ItemService = {
   },
   delete: async (id: string) => {
     const itemRepository = getRepository(Item);
-    const del = await itemRepository.delete(id);
-  },
+    await itemRepository.delete(id);
+  }
 };
 
 export { ItemService };

@@ -1,4 +1,4 @@
-import IItemCategory from "./IItemCategory";
+import IItemCategory from './IItemCategory';
 
 interface IItem {
   name: string;

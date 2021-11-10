@@ -1,11 +1,11 @@
-import "reflect-metadata";
-import "./setupenv";
-import app from "./app";
-import { createConnection } from "typeorm";
-import config from "./Database/ormconfig";
+import 'reflect-metadata';
+import './setupenv';
+import app from './app';
+import { createConnection } from 'typeorm';
+import config from './Database/ormconfig';
 const appPort = 3333;
 const main = async () => {
-  console.log("Connecting to DB...");
+  console.log('Connecting to DB...');
   try {
     await createConnection(config);
   } catch (error) {
@@ -13,7 +13,7 @@ const main = async () => {
     console.error(error);
     return;
   }
-  console.log("Connected.");
+  console.log('Connected.');
   app.listen(appPort, () => {
     console.log(`Listening on port ${appPort}.`);
   });

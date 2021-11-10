@@ -1,5 +1,5 @@
-import { getRepository, Repository } from "typeorm";
-import { ItemGroup } from "../Database/Entities/ItemGroup";
+import { getRepository } from 'typeorm';
+import { ItemGroup } from '../Database/Entities/ItemGroup';
 
 const ItemGroupService = {
   async create(obj: ItemGroup) {
@@ -16,7 +16,7 @@ const ItemGroupService = {
     const itemGroupRepository = getRepository(ItemGroup);
     const itemGroups = await itemGroupRepository.find();
     return itemGroups;
-  },
+  }
 };
 
 export { ItemGroupService };
