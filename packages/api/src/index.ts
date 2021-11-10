@@ -1,9 +1,7 @@
 import 'reflect-metadata';
 import './setupenv';
-import app from './app';
 import { createConnection } from 'typeorm';
 import config from './Database/ormconfig';
-const appPort = 3333;
 const main = async () => {
   console.log('Connecting to DB...');
   try {
@@ -14,8 +12,6 @@ const main = async () => {
     return;
   }
   console.log('Connected.');
-  app.listen(appPort, () => {
-    console.log(`Listening on port ${appPort}.`);
-  });
+  import('./app');
 };
 main();
