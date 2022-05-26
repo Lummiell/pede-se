@@ -4,9 +4,20 @@ Self-hosted app for making orders
 
 (Português: [Leia-me](/README.pt-br.md))
 
+## Index
+
+- [Description](#description)
+- [Project Structure](#project-structure)
+- [Running the Project](#running-the-project)
+  - [API](#api)
+  - [Admin](#admin)
+  - [Mobile](#mobile)
+
 ## Description
 
-**Pede-se** (Portuguese for "Order" as in "A sandwich is ordered") is (read as: will be), as written above, an app for making orders.
+**Pede-se** (Portuguese for "Order" as in "A sandwich is ordered") is an app for making orders.
+
+This is a personal project, I'm using it to learn how to make a complete app with the technologies involved (Express, React, React Native, MySQL, etc.).
 
 The objective is the creation of a service that any establishments may implement in their own network or server of choice, which their customers may use with one single app.
 

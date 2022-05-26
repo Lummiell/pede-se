@@ -1,10 +1,21 @@
-# Pede-se
+# Pede-se (Em Desenvolvimento)
 
 Aplicativo auto-hospedado para fazer pedidos.
 
+## Índice  
+
+- [Descrição](#Descrição)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Como Executar](#como-executar)
+  - [API](#api)
+  - [Admin](#admin)
+  - [Mobile](#mobile)
+
 ## Descrição
 
-**Pede-se** (de "**Pede-se** um sanduíche") é (lê-se: será), como escrito acima, um aplicativo para fazer pedidos.
+**Pede-se** (de "**Pede-se** um sanduíche") é um aplicativo para fazer pedidos.
+
+Este é um projeto pessoal, estou usando-o para aprender a criar um aplicativo completo com as tecnologias envolvidas (Express, React, React Native, MySQL, etc.)
 
 O objetivo é a criação de um serviço que quaisquer estabelecimentos podem implementar em suas redes, ou nos servidores que desejarem, os quais seus clientes podem consumir usando o mesmo aplicativo.
 
@@ -16,7 +27,7 @@ Todos os módulos abaixo estarão dentro da pasta [`packages`](./packages).
 - [Admin](./packages/admin) (Não iniciado) - Aplicação WEB para gerenciamento do serviço.
 - Mobile (Não iniciado) - Aplicação cliente.
 
-## Como executar
+## Executando o Projeto
 
 Instale todas as dependências usando o [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/) na raiz do projeto:
 
@@ -32,7 +43,7 @@ Para executar a API localmente, entre na pasta do projeto:
 cd ./packages/api
 ```
 
-Creie e configure um arquivo `.env` assim como o exemplo no arquivo [.env.example](/packages/api/src/packages/api/.env.example):
+Crie e configure um arquivo `.env` assim como o exemplo no arquivo [.env.example](/packages/api/src/packages/api/.env.example):
 
 ```env
 # MySQL server configuration
