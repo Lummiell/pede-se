@@ -10,10 +10,15 @@
     ]
   },
   "scripts": {
-    "lint": "eslint \"packages/**\""
+    "lint": "eslint \"packages/**\"",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@pede-se/eslint-config": "*",
+    "eslint": "^8.16.0",
+    "husky": ">=6",
+    "lint-staged": ">=10",
+    "prettier": "^2.6.2",
     "typescript": "^4.7.2"
   },
   "license": "MIT",
@@ -21,5 +26,9 @@
     "trailingComma": "none",
     "semi": true,
     "singleQuote": true
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --fix",
+    "*.{ts,tsx,css,md}": "prettier --write"
   }
 }
