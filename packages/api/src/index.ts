@@ -1,11 +1,10 @@
 import 'reflect-metadata';
 import './setupenv';
-import { createConnection } from 'typeorm';
-import config from './Database/ormconfig';
+import { dataSource } from './Database/ormconfig';
 const main = async () => {
   console.log('Connecting to DB...');
   try {
-    await createConnection(config);
+    await dataSource.initialize();
   } catch (error) {
     console.log("Couldn't connect to DB. Error:");
     console.error(error);

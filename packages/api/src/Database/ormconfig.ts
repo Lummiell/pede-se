@@ -1,6 +1,6 @@
 import path from 'path';
-import { ConnectionOptions } from 'typeorm';
-const config: ConnectionOptions = {
+import { DataSource, DataSourceOptions } from 'typeorm';
+export const config: DataSourceOptions = {
   type: 'mysql',
   host: process.env.DB_host,
   port: process.env.DB_port ? Number(process.env.DB_port) : undefined,
@@ -10,10 +10,6 @@ const config: ConnectionOptions = {
   logging: false,
   synchronize: true,
   entities: [path.join(__dirname, 'Entities', '**', '*{.js,.ts}')], // [__dirname + '/Entities/**/*{.js,.ts}'],
-  migrations: [path.join(__dirname, 'Migrations', '**', '*.ts')], // [__dirname + '/Migrations/**/*.ts'],
-  cli: {
-    entitiesDir: path.join(__dirname, 'Entities'), // __dirname + '/Entities',
-    migrationsDir: path.join(__dirname, 'Migrations') // __dirname + '/Migrations'
-  }
+  migrations: [path.join(__dirname, 'Migrations', '**', '*.ts')] // [__dirname + '/Migrations/**/*.ts']
 };
-export default config;
+export const dataSource = new DataSource(config);

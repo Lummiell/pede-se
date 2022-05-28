@@ -1,4 +1,2 @@
-*.json
-*.html
 node_modules
 dist

@@ -1,6 +1,6 @@
-import { getRepository } from 'typeorm';
 import { Item } from '../Database/Entities/Item';
-const itemRepository = getRepository(Item);
+import { dataSource } from '../Database/ormconfig';
+const itemRepository = dataSource.getRepository(Item);
 
 const ItemService = {
   find: async () => {
@@ -8,7 +8,7 @@ const ItemService = {
     return item;
   },
   findOne: async (id: string) => {
-    const item = await itemRepository.findOne(id);
+    const item = await itemRepository.findOneBy({ itemID: id });
     return item;
   },
   create: async (obj: Item) => {

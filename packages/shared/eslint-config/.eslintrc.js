@@ -1,33 +1,23 @@
 module.exports = {
   env: {
     browser: true,
-    es2020: true,
+    es2021: true,
     node: true
   },
-  extends: [
-    'plugin:react/recommended',
-    'standard',
-    'plugin:@typescript-eslint/recommended',
-    'prettier'
-  ],
+  extends: ['plugin:react/recommended', 'standard', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true
     },
-    ecmaVersion: 11,
+    ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', '@typescript-eslint', 'prettier'],
+  plugins: ['react', '@typescript-eslint'],
   rules: {
-    'prettier/prettier': 'warn',
     'react/react-in-jsx-scope': 'off'
-    // @vitejs/plugin-react doesn't require this import
   },
   settings: {
-    'import/resolver': {
-      typescript: {}
-    },
     react: {
       version: 'detect'
     }
