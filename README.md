@@ -49,8 +49,11 @@ cd ./packages/api
 
 Create and configure a `.env` file with the parameters listed on [.env.example](/packages/api/src/packages/api/.env.example):
 
-```env
-# MySQL server configuration
+```sh
+#API Configuration
+APP_port=3333
+
+#MySQL server configuration
 DB_username=user
 DB_password=str0ngp455w0rd
 DB_host=localhost

@@ -1,6 +1,7 @@
 {
   "name": "@pede-se/api",
   "version": "0.0.0",
+  "main": "index.ts",
   "devDependencies": {
     "@types/express": "^4.17.13",
     "@types/node": "^17.0.24",

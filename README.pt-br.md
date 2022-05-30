@@ -2,7 +2,7 @@
 
 Aplicativo auto-hospedado para fazer pedidos.
 
-## Índice  
+## Índice
 
 - [Descrição](#Descrição)
 - [Estrutura do Projeto](#estrutura-do-projeto)
@@ -45,7 +45,10 @@ cd ./packages/api
 
 Crie e configure um arquivo `.env` assim como o exemplo no arquivo [.env.example](/packages/api/src/packages/api/.env.example):
 
-```env
+```sh
+#API Configuration
+APP_port=3333
+
 # MySQL server configuration
 DB_username=usuario
 DB_password=S3nh4F0rt3
