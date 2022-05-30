@@ -11,6 +11,6 @@ const main = async () => {
     return;
   }
   console.log('Connected.');
-  import('./app');
+  import('./server');
 };
 main();
