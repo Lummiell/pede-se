@@ -1,0 +1,30 @@
+FROM node:lts-alpine AS base
+
+WORKDIR /pede-se
+
+COPY ./package.json ./yarn.lock ./
+
+# Get and use the cli tool "jq" to delete unnecessary devDependencies:
+RUN wget -O ./jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
+RUN chmod +x ./jq
+# Delete devDependencies, put them on a temporary file then replace the original package.json with the temporary file
+RUN ./jq 'del(.devDependencies."@pede-se/eslint-config")' ./package.json | \
+    ./jq 'del(.devDependencies."lint-staged")' | \
+    ./jq 'del(.devDependencies.prettier)' | \
+    ./jq 'del(.devDependencies.eslint)' | \
+    ./jq 'del(.devDependencies.husky)' | \
+    ./jq 'del(.scripts.prepare)'  > ./tmp && mv ./tmp ./package.json
+RUN rm ./jq
+
+FROM base AS apitest
+
+COPY ./packages/api/package.json ./packages/api/
+RUN yarn --frozen-lockfile --non-interactive --cache-folder ./yarn-cache; rm -rf ./yarn-cache
+COPY ./packages/api/ ./packages/api/
+WORKDIR /pede-se/packages/api
+USER node
+
+CMD ["yarn","test"]
+
+
+
