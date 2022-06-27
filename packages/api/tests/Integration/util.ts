@@ -11,14 +11,18 @@ export const setupConnection = async () => {
 };
 
 export const dropConnection = async () => {
-  await dataSource.dropDatabase();
-  await dataSource.destroy();
+  if (dataSource.isInitialized) {
+    await dataSource.dropDatabase();
+    await dataSource.destroy();
+  }
 };
 
 export const cleanAllEntities = async () => {
-  const entities = await getEntities();
-  for (const entity of entities) {
-    const repository = dataSource.getRepository(entity.name);
-    await repository.clear();
+  if (dataSource.isInitialized) {
+    const entities = await getEntities();
+    for (const entity of entities) {
+      const repository = dataSource.getRepository(entity.name);
+      await repository.clear();
+    }
   }
 };
