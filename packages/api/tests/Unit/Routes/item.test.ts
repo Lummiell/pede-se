@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import Sinon from 'sinon';
 import request from 'supertest';
-import { app } from '../../src/app';
-import { Item } from '../../src/Database/Entities/Item';
-import { ItemService } from '../../src/Service/ItemService';
+import { app } from '../../../src/app';
+import { Item } from '../../../src/Database/Entities/Item';
+import { ItemService } from '../../../src/Service/ItemService';
 import { faker } from '@faker-js/faker';
 import { v4 } from 'uuid';
-import { ItemGroupService } from '../../src/Service/ItemGroupService';
+import { ItemGroupService } from '../../../src/Service/ItemGroupService';
 const itemPath = '/item';
 const sandbox = Sinon.createSandbox();
 

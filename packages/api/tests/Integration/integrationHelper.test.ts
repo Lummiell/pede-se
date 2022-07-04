@@ -1,6 +1,6 @@
 import 'reflect-metadata';
-import { setupConnection, dropConnection } from './Integration/util';
-import { wait } from '../src/Util/wait';
+import { setupConnection, dropConnection } from '../Integration/util';
+import { wait } from '../../src/Util/wait';
 
 const waitMs = 2000;
 const maxAttempts = 10;

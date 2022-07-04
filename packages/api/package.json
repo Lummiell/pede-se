@@ -23,6 +23,7 @@
   "scripts": {
     "dev": "ts-node-dev --watch ./.env src/index.ts",
     "start": "tsc && node dist/index.js",
-    "test": "mocha -r ts-node/register \"tests/**/*.test.ts\""
+    "test": "mocha -r ts-node/register \"tests/**/*.test.ts\"",
+    "test:unit": "mocha -r ts-node/register \"tests/Unit/**/*.test.ts\""
   }
 }
