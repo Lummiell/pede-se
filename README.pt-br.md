@@ -10,6 +10,10 @@ Aplicativo auto-hospedado para fazer pedidos.
   - [API](#api)
   - [Admin](#admin)
   - [Mobile](#mobile)
+- [Testes automatizados](#testes-automatizados)
+  - [Com docker (Recomendado)](#com-docker-recomendado)
+  - [Sem docker](#sem-docker)
+    - [Testando a API](#testando-a-api)
 
 ## Descrição
 
@@ -86,3 +90,59 @@ A aplicação web (que no momento é apenas um Hello World!) será compilada e h
 ### Mobile
 
 Projeto ainda não implementado.
+
+## Testes Automatizados
+
+### Com Docker (Recomendado)
+
+Para testar o projeto, é recomendado o uso do [Docker](https://docs.docker.com/engine/install/), com suporte ao comando [`docker compose`](https://docs.docker.com/compose/install/), que normalmente é instalado por padrão com o Docker.
+
+Isso é recomendado pois, nos testes de integração, contêineres são criados automaticamente para testar a interação dos pacotes do projeto.
+
+Os seguintes scripts da raiz do projeto estão disponíveis para a execução dos testes:
+
+- `yarn test:api` - Executa todos os testes unitários e de integração da API da aplicação via docker.
+
+### Sem docker
+
+É possível executar os testes sem a necessidade do Docker.
+
+Todos os pacotes possuem o script `yarn test` que é executável nas suas respectivas raízes, com algumas ressalvas, descritas abaixo.
+
+#### Testando a API
+
+Para executar os testes da API no seu próprio ambiente, entre na [raiz do pacote](/packages/api/):
+
+```sh
+cd /packages/api
+```
+
+O script `yarn test:unit` pode ser usado para executar os testes unitários da API, que não requerem conexão com a base de dados.
+
+Para executar TODOS os testes usando o script `yarn test`, é exigido que você configure manualmente suas variáveis de ambiente do sistema com os dados de conexão da sua instância da base de dados.
+
+> :warning: **Essa é uma ação potencialmente destrutiva**. Não use informações de conexão de uma base de dados de produção, se não **todos os dados do serão perdidos**.
+
+Exemplo de comando no Bash (Linux):
+
+```sh
+DB_username=user \
+DB_password=str0ngp455w0rd \
+DB_host=localhost \
+DB_port=3306 \
+DB_database=pedese \
+yarn test
+```
+
+Exemplo de comando no PowerShell (Windows):
+
+```ps
+$Env:DB_username = 'user'; `
+$Env:DB_password = 'str0ngp455w0rd'; `
+$Env:DB_host = 'localhost'; `
+$Env:DB_port = '3306'; `
+$Env:DB_database = 'pedese'; `
+yarn test
+```
+
+> :information_source: Após a execução do comando acima no PowerShell, as variáveis de ambiente permanecerão na memória. Isso pode interferir com a execução da aplicação real. Lembre-se de fechar reabrir o terminal para deletá-las ou de limpá-las manualmente se necessário.
