@@ -43,7 +43,7 @@ yarn
 
 ### API
 
-For running de the API locally:
+For running the API locally:
 
 Move to the project folder with
 
@@ -138,7 +138,7 @@ DB_database=pedese \
 yarn test
 ```
 
-Exemple PowerShell command (Windows):
+Example PowerShell command (Windows):
 
 ```ps
 $Env:DB_username = 'user'; `
