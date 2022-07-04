@@ -6,7 +6,7 @@ Aplicativo auto-hospedado para fazer pedidos.
 
 - [Descrição](#Descrição)
 - [Estrutura do Projeto](#estrutura-do-projeto)
-- [Como Executar](#como-executar)
+- [Executando o Projeto](#executando-o-projeto)
   - [API](#api)
   - [Admin](#admin)
   - [Mobile](#mobile)
